@@ -1,10 +1,12 @@
 # lq
 
-simplest tool for reading a leveldb
+Simplest tool for reading a leveldb
 
 # all the code
 
 optimist + levelup
+
+If you want features, use [lev](https://github.com/hij1nx/lev)
 
 ``` js
 #! /usr/bin/env node
