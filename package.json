@@ -1,0 +1,22 @@
+{
+  "name": "lq",
+  "description": "",
+  "version": "0.0.0",
+  "homepage": "https://github.com/dominictarr/lq",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dominictarr/lq.git"
+  },
+  "dependencies": {
+    "level-sublevel": "~4.6.4",
+    "rc": "~0.1.3",
+    "levelup": "~0.8.0"
+  },
+  "bin": "./index.js"
+  "devDependencies": {},
+  "scripts": {
+    "test": "set -e; for t in test/*.js; do node $t; done"
+  },
+  "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://dominictarr.com)",
+  "license": "MIT"
+}

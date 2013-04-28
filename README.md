@@ -1,0 +1,6 @@
+# lq
+
+
+## License
+
+MIT
