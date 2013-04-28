@@ -1,4 +1,4 @@
-#! /usr/env/node
+#! /usr/bin/env node
 var opts     = require('rc')('lq', {encoding: 'json'})
 var levelup  = require('levelup')
 var sublevel = require('level-sublevel')
@@ -18,7 +18,12 @@ if(opts.pre) {
   opts.min = opts.pre
   opts.max = opts.pre + '\xff'
 }
-console.log(opts)
+
+if(opts.all) {
+  opts.min = '',
+  opts.max = '\xff\xff\xff'
+}
+
 db.createReadStream({
   min: opts.min,
   max: opts.max,
