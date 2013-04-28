@@ -1,11 +1,11 @@
 {
-  "name": "lq",
-  "description": "",
+  "name": "lu",
+  "description": "simplest levelup reader",
   "version": "1.0.0",
-  "homepage": "https://github.com/dominictarr/lq",
+  "homepage": "https://github.com/dominictarr/lu",
   "repository": {
     "type": "git",
-    "url": "git://github.com/dominictarr/lq.git"
+    "url": "git://github.com/dominictarr/lu.git"
   },
   "dependencies": {
     "level-sublevel": "~4.6.4",
