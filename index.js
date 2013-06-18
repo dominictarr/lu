@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 var opts     = require('rc')('lq', {encoding: 'json'})
-var levelup  = require('levelup')
+var levelup  = require('level')
 var sublevel = require('level-sublevel')
 var path     = require('path')
 
