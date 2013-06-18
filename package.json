@@ -1,7 +1,7 @@
 {
   "name": "lu",
   "description": "simplest levelup reader",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "homepage": "https://github.com/dominictarr/lu",
   "repository": {
     "type": "git",
