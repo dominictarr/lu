@@ -8,9 +8,9 @@
     "url": "git://github.com/dominictarr/lu.git"
   },
   "dependencies": {
-    "level": "~0.10.0",
-    "level-sublevel": "~4.7.0",
-    "rc": "~0.3.0"
+    "rc": "~0.3.0",
+    "level": "~0.18.0",
+    "level-sublevel": "~5.2.0"
   },
   "bin": "./index.js",
   "devDependencies": {},
