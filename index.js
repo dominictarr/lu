@@ -3,9 +3,12 @@ var opts     = require('rc')('lq', {encoding: 'json'})
 var levelup  = require('level')
 var sublevel = require('level-sublevel')
 var path     = require('path')
+var through  = require('through')
 
+if(opts.v || opts.version)
+  return console.log(require('./package.json').version)
 
-var db = sublevel(levelup(path.resolve(opts._[0] || '.'), opts))
+var db = levelup(path.resolve(opts._[0] || '.'), opts)
 
 if(opts.max)
   opts.max = opts.max.split('\\xff').join('\xff')
@@ -24,9 +27,9 @@ if(opts.all) {
   opts.max = '\xff\xff\xff'
 }
 
-db.createReadStream({
-  min: opts.min,
-  max: opts.max,
-  reverse: opts.reverse
-})
+
+//console.error(db)
+db.createKeyStream()
+//.pipe(through(console.log))
 .on('data', console.log)
+//.resume()
