@@ -10,7 +10,8 @@
   "dependencies": {
     "rc": "~0.3.0",
     "level": "~0.18.0",
-    "level-sublevel": "~5.2.0"
+    "level-sublevel": "~5.2.0",
+    "through": "~2.3.4"
   },
   "bin": "./index.js",
   "devDependencies": {},
