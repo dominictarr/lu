@@ -1,7 +1,6 @@
 #! /usr/bin/env node
 var opts     = require('rc')('lq', {encoding: 'json'})
 var levelup  = require('level')
-var sublevel = require('level-sublevel')
 var path     = require('path')
 var through  = require('through')
 
@@ -23,13 +22,27 @@ if(opts.pre) {
 }
 
 if(opts.all) {
-  opts.min = '',
-  opts.max = '\xff\xff\xff'
+  opts.start = '',
+  opts.end = '\xff\xff\xff'
 }
 
+opts.start = opts.min
+opts.end = opts.max
 
-//console.error(db)
-db.createKeyStream()
-//.pipe(through(console.log))
-.on('data', console.log)
-//.resume()
+function stringify () {
+  var first = true
+  return through(function (data) {
+    if(first) this.queue('[\n'), first = false
+    else      this.queue(',\n')
+    this.queue(JSON.stringify(data, null, 2))
+  }, function () {
+    if(first) this.queue('[]\n')
+    else      this.queue(']\n')
+    this.queue(null)
+  })
+}
+
+db.createReadStream(opts)
+  .pipe(stringify())
+  .pipe(process.stdout)
+
