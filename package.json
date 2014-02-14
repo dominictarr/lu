@@ -1,7 +1,7 @@
 {
   "name": "lu",
   "description": "simplest levelup reader",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "homepage": "https://github.com/dominictarr/lu",
   "repository": {
     "type": "git",
@@ -10,8 +10,8 @@
   "dependencies": {
     "rc": "~0.3.0",
     "level": "~0.18.0",
-    "level-sublevel": "~5.2.0",
-    "through": "~2.3.4"
+    "through": "~2.3.4",
+    "JSONStream": "~0.7.1"
   },
   "bin": "./index.js",
   "devDependencies": {},
